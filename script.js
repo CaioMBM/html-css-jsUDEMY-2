@@ -31,11 +31,15 @@ function converter(){
     if(selectedCurrency.value === 'eur'){
         valueConverted = inputValue.value / 5.95
         result.innerHTML = valueFormatter('pt-br', 'EUR')
+        
+        animateResult()
     }
     // Convertendo para DÓLAR - Cotação no dia 17/07/24
     else if(selectedCurrency.value === 'dol'){
         valueConverted = inputValue.value / 5.44
         result.innerHTML = valueFormatter('pt-br', 'USD')
+        
+        animateResult()
     }
 
 
@@ -51,4 +55,9 @@ function valueFormatter(Locale, currency){
 
     // OBS 1: Se retirar o style: 'currency', irá exibir o valor convertido, mas sem o simbolo monetário.
     // OBS 2:  Se retirar o currency: `${currency}`, por algum motivo que não entendi, não aparece o resultado convertido e nem o simbolo monetário.
+}
+
+// Função para fazer a animação
+function animateResult(){
+    return result.animate([{transform: 'translateY(-20px)'}, {transform: 'translateY(0px)'}], {duration: 500})
 }
