@@ -1,10 +1,10 @@
 const form = document.getElementById('form')
 form.addEventListener('submit', handleSubmit)
 
-const inputValue = document.getElementById('value-real')
+const inputValue       = document.getElementById('value-real')
 const selectedCurrency = document.getElementById('currency')
-const result = document.getElementById('result')
-let valueConverted = 0
+const result           = document.getElementById('result')
+let valueConverted     = 0
 
 
 // Função de validação
@@ -59,5 +59,8 @@ function valueFormatter(Locale, currency){
 
 // Função para fazer a animação
 function animateResult(){
-    return result.animate([{transform: 'translateY(-20px)'}, {transform: 'translateY(0px)'}], {duration: 500})
+    return result.animate([
+        {transform: 'translateY(-20px)'}, 
+        {transform: 'translateY(0px)'}
+    ], {duration: 500})
 }
